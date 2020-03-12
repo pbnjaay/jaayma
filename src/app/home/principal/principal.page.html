@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openModal()" >
+        category
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="start" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-grid>
+    <ion-row *ngIf="products">
+      <ion-col *ngFor="let p of products" size="6" size-md size-xl="3" >
+        <ion-card [routerLink] = "['/',p._id]" class="ion-no-margin">
+          <ion-thumbnail>
+            <ion-img [src]=p.imageUrl></ion-img>
+          </ion-thumbnail>
+          <ion-card-header>
+            <ion-card-title>{{ p.title }}</ion-card-title>
+            <p>{{ p.price | currency }}</p>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>  
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!products">
+    <ion-row>
+      <ion-col *ngFor="let f of fake" size="6" size-md size-xl="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-skeleton-text animated style="width: 80%; height:4rem;"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

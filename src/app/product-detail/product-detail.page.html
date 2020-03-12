@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/home/tabs/principal'></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home/tabs/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-sm size-lg="6">
+        <ion-card *ngIf="product">
+        <ion-img [src]="product.imageUrl"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{ product.title }}</ion-card-title>
+            <p>{{ product.price | currency }}</p>
+            <ion-button (click)="onClick()">
+              <ion-icon name="cart-outline"></ion-icon>
+              <ion-text>Add to cart</ion-text>
+            </ion-button>
+          </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aliquam quod esse ipsa sunt, in perspiciatis natus nulla ea optio ipsum sit vero dolore odio debitis vel magni nobis quidem.
+        </ion-card-content>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label>See all</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngFor="let p of products" lines="none">
+      <ion-label>{{ p.category }}</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons class="ion-justify-content-center">
+      <ion-button fill="outline">
+        Cancel
+      </ion-button>
+      <ion-button fill="solid">
+        Validate
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

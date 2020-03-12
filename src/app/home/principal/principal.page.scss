@@ -1,0 +1,17 @@
+ ion-card{
+    &:active {
+        outline: none;
+      }
+}
+ion-thumbnail {
+    height: 10rem;
+    width: 100%;
+    background-size: cover;
+}
+
+ion-card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
